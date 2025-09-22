@@ -1,18 +1,21 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Projects from './pages/Projects'
-import Blog from './pages/Blog'
-import BlogPost from './pages/BlogPost'
-import Contact from './pages/Contact'
-import Resume from './pages/Resume'
-import AdminLogin from './pages/Admin/Login'
-import AdminDashboard from './pages/Admin/Dashboard'
-import AdminProjects from './pages/Admin/Projects'
-import AdminBlogs from './pages/Admin/Blogs'
-import ProtectedRoute from './components/ProtectedRoute'
-import Header from './components/Header'
-import Footer from './components/Footer'
+// frontend/src/App.jsx
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import Contact from "./pages/Contact";
+import Resume from "./pages/Resume";
+import AdminLogin from "./pages/Admin/Login";
+import AdminDashboard from "./pages/Admin/Dashboard";
+import AdminProjects from "./pages/Admin/Projects";
+import AdminBlogs from "./pages/Admin/Blogs";
+import AdminSkills from "./pages/Admin/Skills";
+import ChangePassword from "./pages/Admin/ChangePassword";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -54,9 +57,25 @@ export default function App() {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/admin/skills"
+            element={
+              <ProtectedRoute>
+                <AdminSkills />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/change-password"
+            element={
+              <ProtectedRoute>
+                <ChangePassword />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </main>
       <Footer />
     </div>
-  )
+  );
 }
