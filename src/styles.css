@@ -1,0 +1,4 @@
+/* Minimal base styles, Tailwind recommended for extension */
+body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; }
+.container { max-width: 1000px; margin: 0 auto; padding: 1rem; }
+a { color: inherit; text-decoration: none; }
